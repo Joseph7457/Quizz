@@ -16,10 +16,11 @@ Le tout est contenu dans une fenetre jeu quizz
 
 struct jeu_quizz
 {
-    Quizz** quizzs;                 // Ensemble des quizz -> possibilité d'afficher plusieurs quizzs sur la même page.
-    GtkWidget* boite_principale;    // Boite contenant les quizzs et les décorations
-    GtkWidget** décorations         // Boite servant au stylisme de la page
-    GtkWidget** boutons             // Bouton de controle. Suivant, quitter, recommencer.
+    void**     type_libre;          // Ensemble des quizz -> possibilité d'afficher plusieurs quizzs sur la même page.
+    GtkWidget** boite_libre;    // Boite contenant les quizzs et les décorations
+    int[]   coordonnee_boite_principale;
+    int[][] coordonnee_boite_decorative;
+    int[][]   coordonnee_bouton;
 
     int nombre_quizz;
     int type_boite_principale;
