@@ -1,0 +1,85 @@
+D'abord, créer un modèle contenant les attributs et données voulus.
+Ensuite, créer une vue, qui s'occupe de la création des widgets et de leur attribut visuel.
+Et finalement, créer un controleur, qui associe des signaux aux widgets de la vue.
+
+
+Le controleur contient les fonctions de clic, ainsi que des fonctions permettant de modifier le quizz de manière large.
+Créer Quizz
+Charger Quizz
+Actualiser Quizz
+
+
+#define V 0
+#define H 1
+
+Le tout est contenu dans une fenetre jeu quizz
+
+struct jeu_quizz
+{
+    Quizz** quizzs;                 // Ensemble des quizz -> possibilité d'afficher plusieurs quizzs sur la même page.
+    GtkWidget* boite_principale;    // Boite contenant les quizzs et les décorations
+    GtkWidget** décorations         // Boite servant au stylisme de la page
+    GtkWidget** boutons             // Bouton de controle. Suivant, quitter, recommencer.
+
+    int nombre_quizz;
+    int type_boite_principale;
+    int nombre_decorations;
+    int nombre_boutons;
+
+}JeuQuizz();
+
+
+JeuQuizz* creer_JeuQuizz(char* dossier, int nombre_deco, int nombre_boutons);
+void creer_boite_principale(JeuQuizz* jq);
+
+
+int extraire_nombre_quizzs(char* dossier);
+void definir_nombre_quizz(JeuQuizz* jq, int nombre);
+void allouer_espace_quizzs(JeuQuizz* jq);
+void desallouer_espace_quizzs(JeuQuizz* jq);
+void attribuer_quizzs(JeuQuizz* jq, char* dossier);
+
+void definir_nombre_decoration(JeuQuizz* jq, int nombre);
+void allouer_espace_decoration(JeuQuizz* jq);
+void desallouer_espace_decoration(JeuQuizz* jq);
+
+
+
+void definir_nombre_boutons(JeuQuizz* jq, int nombre);
+void allouer_espace_boutons(JeuQuizz* jq);
+void desallouer_espace_boutons(JeuQuizz* jq);
+
+
+Avoir plusieurs pages de théorie.
+
+A chaque page 2 évalutions enregistrées en bas de page.
+
+A quel point je comprends la matière?
+
+1. Riiiiien de rien, je ne comprends rien.
+2. Un poil plus que rien, mais toujours trop peu
+3. Tout n'est pas obscur
+4. Vite fait
+5. Globablement assez bien assimilée
+6. Je suis la matière. La matière, c'est moi.
+
+
+A quel point je connais la matière de mémoire?
+
+1. La matière? Quelle matière?
+2. De temps en temps je sais ressortir la première ligne
+3. J'ai une vague idée de la structure générale
+4. Assimilée de manière très décousue, mais assimilée
+5. Je peux la réciter avec 90 % de précision là maintenant
+6. Je la récite à voix haute et sans faute chaque matin sous la douche
+
+
+
+
+A chaque page de théorie:
+    Lien vers chaque prérequis, avec une évaluation générale conseillée pour la bonne compréhension de la matière. 
+    Situé au début
+
+    Lien optionnel vers un quizz ou ensemble de quizz
+
+
