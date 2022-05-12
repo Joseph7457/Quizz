@@ -13,7 +13,6 @@ typedef struct quizz_m
   char*  reponse;
   char** choix;
 
-
   int nombre_reponses;
 
 
